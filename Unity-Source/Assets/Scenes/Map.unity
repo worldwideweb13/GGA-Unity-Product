@@ -508,7 +508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1675869755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,8 +521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed11ca214934e4284baef2423e220755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LatitudeText: {fileID: 1682002072}
-  LongitudeText: {fileID: 121059073}
 --- !u!114 &1675869756
 MonoBehaviour:
   m_ObjectHideFlags: 0

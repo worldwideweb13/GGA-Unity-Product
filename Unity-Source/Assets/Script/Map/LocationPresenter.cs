@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class LocationPresenter : MonoBehaviour
 {
     // GameObjectをメソッド外で定義することで、InspectorにてObjectを紐づけできる。
-    private const string STATIC_MAP_URL = "https://maps.googleapis.com/maps/api/staticmap?key=${APIKey}&zoom=15&size=640x640&scale=2&maptype=terrain&style=element:labels|visibility:off";
+    private const string STATIC_MAP_URL = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCN773NQ0NQsV4OjQjSd-TuFv-5Z9IEbWU&zoom=15&size=640x640&scale=2&maptype=terrain&style=element:labels|visibility:off";
 
     private int frame = 0;
 
