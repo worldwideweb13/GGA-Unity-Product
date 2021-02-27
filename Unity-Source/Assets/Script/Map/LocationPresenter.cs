@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+
 public class LocationPresenter : MonoBehaviour
 {
     // GameObjectをメソッド外で定義することで、InspectorにてObjectを紐づけできる。
@@ -12,7 +12,7 @@ public class LocationPresenter : MonoBehaviour
     void Start()
     {
         // 非同期処理
-        StartCoroutine(getStaticMap());
+        StartCoroutine(getStaticMap());       
     }
 
     // unity は毎秒30~60フレームで画面を構成しており、update()内に書かれた処理は1フレーム毎に実行される
@@ -31,15 +31,20 @@ public class LocationPresenter : MonoBehaviour
 
     IEnumerator getStaticMap()
     {
+        // Start service before querying location
         var query = "";
 
         // centerで取得するミニマップの中央座標を設定
             // UnityWebRequest.UnEscapeURL = 特殊文字を人間が扱う文字列に変換するメソッド
             // string.Format("{}" hogehoge )...{}番目の値を"{}"の形式で表示する ※{},引数は複数指定可
             // 例:string.Format("{0}です" hogehoge, hogeeeeee ) = hogehogeです
-            query += "&center" + UnityWebRequest.UnEscapeURL(string.Format("{0},{1}", Input.location.lastData.latitude, Input.location.lastData.longitude));
+            query += "&center=" + UnityWebRequest.UnEscapeURL(string.Format("{0},{1}", Input.location.lastData.latitude, Input.location.lastData.longitude));
+            // query += "&center=35.770160,139.645000";
+            Debug.Log(query);
         // markersで渡した座標(=現在位置)にマーカーを立てる
             query += "&markers=" + UnityWebRequest.UnEscapeURL(string.Format("{0},{1}", Input.location.lastData.latitude, Input.location.lastData.longitude));
+            // query += "&markers=35.770160,139.645000";
+            Debug.Log(query);
 
         //リクエストの定義
         // UnityWebRequestTexture.GetTexture(hogehoge)...HTTP GET経由でイメージをダウンロードするときに
